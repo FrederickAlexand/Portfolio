@@ -64,7 +64,7 @@ const EmailSection = () => {
             Send Message
           </button>
         </form>
-        "
+       &quot;
       </div>
     </section>
   );
