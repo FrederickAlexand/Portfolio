@@ -24,12 +24,12 @@ const projectsData = [
   },
   {
     id: 3,
-    title: "E-commerce Application",
+    title: "Roof Showcase Website",
     description: "Project 3 description",
-    image: "/images/projects/3.png",
+    image: "/images/projects/3.jpg",
     tag: ["All", "Web"],
     gitUrl: "/",
-    previewUrl: "/",
+    previewUrl: "https://atapaspalpalembang.site/",
   },
   {
     id: 4,
