@@ -11,8 +11,8 @@ const EmailSection = () => {
       <div className="z-10">
         <h5 className="text-xl font-bold text-white my-2">Let's Connect</h5>
         <p className="text-[#ADB7BE] mb-4 max-w-md">
-          I'm looking for new Opportunities, please contact me through my inbox,
-          Feel free to say Hi, I'll try to reach back out! Have a nice day!
+          I&apos;m looking for new Opportunities, please contact me through my inbox,
+          Feel free to say Hi, I&apos;ll try to reach back out! Have a nice day!
         </p>
         <div className="socials flex flex-row gap-2">
           <Link href="github.com">

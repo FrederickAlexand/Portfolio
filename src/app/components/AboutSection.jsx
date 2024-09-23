@@ -3,14 +3,12 @@ import React, { useTransition, useState } from "react";
 import Image from "next/image";
 import TabButton from "./TabButton";
 
-const TAB_DATA =[
-
-
-{
+const TAB_DATA = [
+  {
     title: "Skills",
     id: "skills",
     content: (
-        <ul className="list-disc pl-2">
+      <ul className="list-disc pl-2">
         <li>Html</li>
         <li>Css</li>
         <li>Javascript</li>
@@ -20,30 +18,32 @@ const TAB_DATA =[
         <li>React</li>
         <li>Next</li>
         <li>PostgreSQL</li>
-        </ul>
-    )
-},
-{
+      </ul>
+    ),
+  },
+  {
     title: "Education",
     id: "education",
     content: (
-        <ul className="list-disc pl-2">
-            <li>Revou Fullstack Software Engineer</li>
-            <li>Universitas Multimedia Nusantara</li>
-        </ul>
-    )
-},
-{
+      <ul className="list-disc pl-2">
+        <li>Revou Fullstack Software Engineer</li>
+        <li>Universitas Multimedia Nusantara</li>
+      </ul>
+    ),
+  },
+  {
     title: "Certifications",
     id: "certifications",
     content: (
-        <ul className="list-disc pl-2">
-            <li>TOEIC Certification score = <b>945</b></li>
-            <li>Information Technology Specialist HTML and CSS</li>
-        </ul>
-    )
-}
-]
+      <ul className="list-disc pl-2">
+        <li>
+          TOEIC Certification score = <b>945</b>
+        </li>
+        <li>Information Technology Specialist HTML and CSS</li>
+      </ul>
+    ),
+  },
+];
 
 const AboutSection = () => {
   const [tab, setTab] = useState("skills");
@@ -65,32 +65,33 @@ const AboutSection = () => {
             website development using essential frameworks and libraries.
             Aspiring Full-stack Web Developer open to exploring diverse
             opportunities. Experienced in creating engaging community websites.
-            Let's connect and innovate in the digital space!
+            Let&apos;s connect and innovate in the digital space!
           </p>
           <div className="flex flex-row justify-start mt-8">
             <TabButton
               selectTab={() => handleTabChange("skills")}
               active={tab === "skills"}
             >
-            {" "}
+              {" "}
               Skills{" "}
             </TabButton>
             <TabButton
               selectTab={() => handleTabChange("education")}
               active={tab === "education"}
             >
-            {" "}
+              {" "}
               Education{" "}
             </TabButton>
             <TabButton
               selectTab={() => handleTabChange("certifications")}
               active={tab === "certifications"}
             >
-            {" "}
+              {" "}
               Certification{" "}
             </TabButton>
           </div>
-          <div className="mt-8">{TAB_DATA.find((t) => t.id === tab).content}
+          <div className="mt-8">
+            {TAB_DATA.find((t) => t.id === tab).content}
           </div>
         </div>
       </div>

@@ -12,7 +12,7 @@ const HeroSection = () => {
           <h1 className="text-white mb-4 text-4xl sm:text-5xl lg:text-6xl font-extrabold">
             <span>
               <div className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600">
-                Hello, I'm{" "}
+                Hello, I&apos;m{" "}
               </div>
             </span>
             <br></br>
@@ -34,7 +34,7 @@ const HeroSection = () => {
             />
           </h1>
           <p className="text-[#ADB7BE] text-base sm:text-lg mb-6 lg:text-xl">
-            "Hi, I'm Fred, a passionate Web
+            "Hi, I&apos;m Fred, a passionate Web
             developer committed to creating
             impactful and innovative solutions. Welcome to my portfolio, where
             creativity meets code!"
