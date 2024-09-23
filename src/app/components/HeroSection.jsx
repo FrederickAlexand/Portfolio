@@ -34,10 +34,10 @@ const HeroSection = () => {
             />
           </h1>
           <p className="text-[#ADB7BE] text-base sm:text-lg mb-6 lg:text-xl">
-            "Hi, I&apos;m Fred, a passionate Web
+            &quot;Hi, I&apos;m Fred, a passionate Web
             developer committed to creating
             impactful and innovative solutions. Welcome to my portfolio, where
-            creativity meets code!"
+            creativity meets code!&quot;
           </p>
           <div>
             <button className="px-6 py-3 w-full sm:w-fit rounded-full mr-4 bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 hover:bg-slate-200 text-white">
