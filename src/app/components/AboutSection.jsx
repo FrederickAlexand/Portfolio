@@ -54,8 +54,9 @@ const AboutSection = () => {
       setTab(id);
     });
   };
+
   return (
-    <section className="text-white">
+    <section id="about" className="text-white">
       <div className="md:grid md:grid-cols-2 gap-8 items-center py-8 px-4 xl:gap-16 sm:py-16 xl:px-16">
         <Image src="/images/about.jpg" width={500} height={500} alt="about" />
         <div className="mt-4 md:mt-0 text-left flex flex-col h-full">
@@ -71,27 +72,34 @@ const AboutSection = () => {
             <TabButton
               selectTab={() => handleTabChange("skills")}
               active={tab === "skills"}
+              aria-label="Skills Tab" // Added accessibility
+              role="tab" // Role for accessibility
             >
-              {" "}
-              Skills{" "}
+              Skills
             </TabButton>
             <TabButton
               selectTab={() => handleTabChange("education")}
               active={tab === "education"}
+              aria-label="Education Tab"
+              role="tab"
             >
-              {" "}
-              Education{" "}
+              Education
             </TabButton>
             <TabButton
               selectTab={() => handleTabChange("certifications")}
               active={tab === "certifications"}
+              aria-label="Certifications Tab"
+              role="tab"
             >
-              {" "}
-              Certification{" "}
+              Certification
             </TabButton>
           </div>
-          <div className="mt-8">
-            {TAB_DATA.find((t) => t.id === tab).content}
+          <div className="mt-8" role="tabpanel" aria-labelledby={tab}>
+            {isPending ? ( // Conditional loading indicator
+              <div className="text-center text-gray-400">Loading...</div>
+            ) : (
+              TAB_DATA.find((t) => t.id === tab).content
+            )}
           </div>
         </div>
       </div>

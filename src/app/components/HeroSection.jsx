@@ -6,7 +6,7 @@ import { TypeAnimation } from "react-type-animation";
 
 const HeroSection = () => {
   return (
-    <section>
+    <section id="hero" className="py-10"> {/* Added padding for better spacing */}
       <div className="grid grid-cols-1 sm:grid-cols-12">
         <div className="col-span-7 place-self-center text-center sm:text-left">
           <h1 className="text-white mb-4 text-4xl sm:text-5xl lg:text-6xl font-extrabold">
@@ -15,7 +15,7 @@ const HeroSection = () => {
                 Hello, I&apos;m{" "}
               </div>
             </span>
-            <br></br>
+            <br />
             <TypeAnimation
               sequence={[
                 "Frederick Alexander",
@@ -45,13 +45,16 @@ const HeroSection = () => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <button className="px-6 py-3 w-full sm:w-fit rounded-full mr-4 bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 hover:bg-slate-200 text-white">
+              <button
+                className="px-6 py-3 w-full sm:w-fit rounded-full mr-4 bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 hover:bg-slate-200 text-white transition-colors duration-300"
+                aria-label="Contact Frederick via WhatsApp"
+              >
                 Hire Me
               </button>
             </a>
             {/* Download CV */}
             <a
-              href="/Fredericks.pdf" // Make sure this path points to your CV
+              href="/Fredericks.pdf" // Ensure this path points to your CV
               download="frederick_alexander_cv.pdf"
             >
               <button className="px-1 py-1 w-full sm:w-fit rounded-full bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 hover:bg-slate-800 text-white mt-3">
@@ -65,8 +68,8 @@ const HeroSection = () => {
         <div className="col-span-5 place-self-center mt-4 lg:mt-0">
           <div className="rounded-full bg-[#181818] w-[250px] h-[250px] lg:w-[400px] lg:h-[400px] relative overflow-hidden flex items-center justify-center">
             <Image
-              src="/images/image.png" // Make sure this path is correct
-              alt="fred"
+              src="/images/image.png" // Ensure this path is correct
+              alt="Fred"
               className="rounded-full object-cover"
               width={400} // Match the size of the circle (400px)
               height={400} // Match the size of the circle (400px)
