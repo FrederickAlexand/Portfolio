@@ -25,7 +25,7 @@ const projectsData = [
   {
     id: 3,
     title: "Roof Showcase Website",
-    description: "Project 3 description",
+    description: "Roof Material Showcase website as a platform for people to see different type of roof material.",
     image: "/images/projects/3.jpg",
     tag: ["All", "Web"],
     gitUrl: "/",

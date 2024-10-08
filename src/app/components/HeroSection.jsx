@@ -34,30 +34,42 @@ const HeroSection = () => {
             />
           </h1>
           <p className="text-[#ADB7BE] text-base sm:text-lg mb-6 lg:text-xl">
-            &quot;Hi, I&apos;m Fred, a passionate Web
-            developer committed to creating
-            impactful and innovative solutions. Welcome to my portfolio, where
-            creativity meets code!&quot;
+            &quot;Hi, I&apos;m Fred, a passionate Web developer committed to
+            creating impactful and innovative solutions. Welcome to my
+            portfolio, where creativity meets code!&quot;
           </p>
           <div>
-            <button className="px-6 py-3 w-full sm:w-fit rounded-full mr-4 bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 hover:bg-slate-200 text-white">
-              Hire Me
-            </button>
-            <button className="px-1 py-1 w-full sm:w-fit rounded-full bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 hover:bg-slate-800 text-white mt-3">
-              <span className="block bg-[#121212] hover:bg-slate-800 rounded-full px-5 py-2">
-                Download CV
-              </span>
-            </button>
+            {/* Hire Me - Contact via WhatsApp */}
+            <a
+              href="https://wa.me/081369112198?text=Hi%20Fred,%20I%20would%20like%20to%20discuss%20a%20project"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <button className="px-6 py-3 w-full sm:w-fit rounded-full mr-4 bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 hover:bg-slate-200 text-white">
+                Hire Me
+              </button>
+            </a>
+            {/* Download CV */}
+            <a
+              href="/Fredericks.pdf" // Make sure this path points to your CV
+              download="frederick_alexander_cv.pdf"
+            >
+              <button className="px-1 py-1 w-full sm:w-fit rounded-full bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 hover:bg-slate-800 text-white mt-3">
+                <span className="block bg-[#121212] hover:bg-slate-800 rounded-full px-5 py-2">
+                  Download CV
+                </span>
+              </button>
+            </a>
           </div>
         </div>
         <div className="col-span-5 place-self-center mt-4 lg:mt-0">
           <div className="rounded-full bg-[#181818] w-[250px] h-[250px] lg:w-[400px] lg:h-[400px] relative overflow-hidden flex items-center justify-center">
             <Image
-              src="/images/image.png" // Pastikan path ini benar
+              src="/images/image.png" // Make sure this path is correct
               alt="fred"
               className="rounded-full object-cover"
-              width={400} // Sesuaikan dengan ukuran lingkaran (400px)
-              height={400} // Sesuaikan dengan ukuran lingkaran (400px)
+              width={400} // Match the size of the circle (400px)
+              height={400} // Match the size of the circle (400px)
             />
           </div>
         </div>
