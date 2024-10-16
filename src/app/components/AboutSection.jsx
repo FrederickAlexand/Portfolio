@@ -187,7 +187,7 @@ const AboutSection = () => {
         <div className="mt-4 md:mt-0 text-left flex flex-col h-full">
           <h2 className="text-4xl font-bold text-white mb-4">About Me</h2>
           <p className="text-base lg:text-lg leading-relaxed mb-6">
-            I'm a{" "}
+            I&apos;m a{" "}
             <span className="text-yellow-400 font-bold">
               passionate Full-Stack Developer
             </span>{" "}
