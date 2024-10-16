@@ -73,7 +73,9 @@ export const Navbar = () => {
                     </ul>
                 </div>
             </div>
-            {navbarOpen && <MenuOverlay links={navLinks} />}
+            {navbarOpen && (
+                <MenuOverlay links={navLinks} onClose={() => setNavbarOpen(false)} />
+            )}
         </nav>
     );
 };
