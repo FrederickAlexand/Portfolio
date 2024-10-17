@@ -23,7 +23,7 @@ const SkillsSection = () => {
       <div className="max-w-6xl mx-auto px-4">
         <h2 className="text-4xl font-bold text-center mb-8">Skills</h2>
         <p className="text-center text-gray-400 mb-12">
-          Here's a glimpse of the technologies and languages I'm proficient in.
+          Here&apos;s a glimpse of the technologies and languages I&apos;m proficient in.
         </p>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-8">
           {skills.map((skill, index) => (
