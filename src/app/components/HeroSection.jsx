@@ -20,11 +20,11 @@ const HeroSection = () => {
               sequence={[
                 "Frederick Alexander",
                 1000,
-                "FrontEnd Web Developer",
+                "a FrontEnd Web Developer",
                 1000,
-                "BackEnd Web Developer",
+                "a BackEnd Web Developer",
                 1000,
-                "FullStack Web Developer",
+                "a FullStack Web Developer",
                 1000,
               ]}
               wrapper="span"
@@ -54,7 +54,7 @@ const HeroSection = () => {
             </a>
             {/* Download CV */}
             <a
-              href="/Fredericks.pdf" // Ensure this path points to your CV
+              href="/FredsCV.pdf" // Ensure this path points to your CV
               download="frederick_alexander_cv.pdf"
             >
               <button className="px-1 py-1 w-full sm:w-fit rounded-full bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 hover:bg-slate-800 text-white mt-3">

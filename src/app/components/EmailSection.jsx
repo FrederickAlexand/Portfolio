@@ -34,7 +34,7 @@ const EmailSection = () => {
           I&apos;m looking for new opportunities. Please contact me through my inbox. Feel free to say Hi, and I&apos;ll try to reach back out! Have a nice day!
         </p>
         <div className="socials flex flex-row gap-4">
-          <Link href="https://github.com" aria-label="GitHub" target="_blank">
+          <Link href="https://github.com/FrederickAlexand" aria-label="GitHub" target="_blank">
             <FaGithub className="text-white hover:text-gray-400 text-3xl transition-transform transform hover:scale-110" />
           </Link>
           <Link href="https://www.linkedin.com/in/frederick-alexander-badaruddin-7227052b0/" aria-label="LinkedIn" target="_blank">

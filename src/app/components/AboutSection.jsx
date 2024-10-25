@@ -175,7 +175,7 @@ const AboutSection = () => {
   };
 
   return (
-    <section id="about" className="text-white bg-gray-950 p-8 rounded-lg">
+    <section id="about" className="text-white  bg-[#1E1E1E] rounded-lg">
       <div className="md:grid md:grid-cols-2 gap-8 items-center">
         <Image
           src="/images/about.jpg"
@@ -188,17 +188,17 @@ const AboutSection = () => {
           <h2 className="text-4xl font-bold text-white mb-4">About Me</h2>
           <p className="text-base lg:text-lg leading-relaxed mb-6">
             I&apos;m a{" "}
-            <span className="text-yellow-400 font-bold">
+            <span className="text-purple-400 font-bold">
               passionate Full-Stack Developer
             </span>{" "}
             with a{" "}
-            <span className="font-semibold text-sky-400">
+            <span className="font-semibold text-purple-400">
               strong foundation
             </span>{" "}
             in web technologies like <strong>React</strong> and{" "}
             <strong>Next.js</strong>, and a genuine love for creating intuitive
             user experiences. I recently graduated from{" "}
-            <span className="font-bold text-blue-300">
+            <span className="font-bold text-purple-300">
               Multimedia Nusantara University
             </span>{" "}
             with a degree in <strong>Informatics Engineering</strong>, ready to

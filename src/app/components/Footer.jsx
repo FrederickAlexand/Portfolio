@@ -20,7 +20,7 @@ const Footer = () => {
           <p className="text-slate-400">© {new Date().getFullYear()} All rights reserved</p>
         </div>
         <div className="flex space-x-6 mt-4 md:mt-0">
-          <a href="https://github.com" aria-label="GitHub" target="_blank" rel="noopener noreferrer">
+          <a href="https://github.com/FrederickAlexand" aria-label="GitHub" target="_blank" rel="noopener noreferrer">
             <FaGithub className="text-white hover:text-gray-400 text-2xl transition-transform transform hover:scale-110" />
           </a>
           <a href="https://www.linkedin.com/in/your-profile" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
