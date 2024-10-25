@@ -11,7 +11,7 @@ const LottieSection = () => {
                     🚀 Launch Your Ideas!
                 </h2>
                 <p className="mb-8 text-lg text-gray-300 max-w-xl mx-auto">
-                    Transforming your vision into reality with innovative web solutions. Let’s take your projects to new heights together!
+                    Transforming your vision into reality with innovative web solutions. Let&apos;s take your projects to new heights together!
                 </p>
 
                 <div className="flex justify-center items-center mb-8">
@@ -42,7 +42,7 @@ const LottieSection = () => {
                     className="inline-block bg-gradient-to-br from-blue-500 to-pink-500 text-white font-semibold rounded-full px-8 py-3 shadow-lg transition-transform transform hover:scale-105"
                     aria-label="Contact for Projects"
                 >
-                    Let's Collaborate!
+                    Let&apos;s Collaborate!
                 </a>
             </div>
         </section>
