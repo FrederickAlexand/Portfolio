@@ -54,7 +54,7 @@ const HeroSection = () => {
             </a>
             {/* Download CV */}
             <a
-              href="/FredsCV.pdf" // Ensure this path points to your CV
+              href="/FrederickAlexCV.pdf" // Ensure this path points to your CV
               download="frederick_alexander_cv.pdf"
             >
               <button className="px-1 py-1 w-full sm:w-fit rounded-full bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 hover:bg-slate-800 text-white mt-3">
