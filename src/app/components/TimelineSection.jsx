@@ -135,7 +135,7 @@ const TimelineSection = () => {
             tooltip: "Business Operations"
         },
         {
-            date: "August 2024",
+            date: "July 2024",
             title: "Graduated with a Bachelor's in Informatics Engineering, Universitas Multimedia Nusantara",
             description: "Completed a thesis on classifying meat freshness using CNN and gained hands-on experience in deep learning and image processing.",
             technologies: "Python, CNN, Machine Learning",
@@ -143,13 +143,21 @@ const TimelineSection = () => {
             tooltip: "Degree Achieved"
         },
         {
-            date: "August 2024",
+            date: "January 2024 - August 2024",
             title: "Full-Stack Developer at RevoU Bootcamp",
             description: "Built responsive web applications using Next.js and TypeScript, focusing on both frontend and backend development.",
             technologies: "Next.js, TypeScript, Flask, SQLAlchemy",
             icon: <FaLaptopCode className="text-white w-7 h-7" />,
             tooltip: "Full-Stack Bootcamp"
-        }
+        },
+        {
+            date: "November 2024 - Present",
+            title: "Software Engineer at PT Timur Usaha Mandiri (Placed at PT Makmur Supra Nusantara)",
+            description: "Developed full-stack web applications using PHP (MVC), Laravel, Vue.js, and integrated APIs. Focused on both frontend (UI/UX, Vue.js) and backend (Laravel, database management, and API integration). Key projects include school websites and CRM systems for various companies.",
+            technologies: "PHP (MVC), Laravel, Vue.js, MySQL, API Integration",
+            icon: <FaLaptopCode className="text-white w-7 h-7" />,
+            tooltip: "Software Engineer"
+        }        
     ];
 
     const toggleExpand = (index) => {
