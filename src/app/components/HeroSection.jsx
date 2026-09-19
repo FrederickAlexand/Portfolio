@@ -49,7 +49,7 @@ const HeroSection = () => {
               </button>
             </a>
             <a
-              href="/FrederickAlexCV.pdf"
+              href="/FredericksCv.pdf"
               download="frederick_alexander_cv.pdf"
             >
               <button className="px-1 py-1 w-full sm:w-fit rounded-full bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 hover:bg-slate-800 text-white mt-3">
