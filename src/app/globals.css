@@ -3,27 +3,48 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --foreground: 248 250 252;
+  --background: 2 6 23;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  color: rgb(var(--foreground));
+  background-color: rgb(var(--background));
+  @apply antialiased text-slate-200 leading-relaxed;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  @apply tracking-tight text-white;
+}
+
+@layer components {
+  .glass-card {
+    @apply backdrop-blur-md bg-slate-800/50 border border-white/20 rounded-2xl
+      transition-all duration-300 ease-in-out;
+  }
+
+  .glass-card-hover {
+    @apply hover:-translate-y-2 hover:shadow-2xl hover:shadow-blue-500/20;
+  }
+
+  .section-heading {
+    @apply text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-white;
+  }
+
+  .section-sub {
+    @apply text-slate-400 leading-relaxed;
+  }
+
+  .date-badge {
+    @apply inline-flex items-center bg-slate-800/80 text-slate-400 text-sm px-3 py-1 rounded-full border border-white/10;
+  }
 }
 
 @layer utilities {
@@ -31,4 +52,3 @@ body {
     text-wrap: balance;
   }
 }
-

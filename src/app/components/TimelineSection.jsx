@@ -1,181 +1,116 @@
-"use client"; // Ensure client-side rendering
+"use client";
 
-import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
-import { FaGraduationCap, FaBriefcase, FaUserTie, FaCode, FaLaptopCode } from 'react-icons/fa';
+import React from "react";
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
-// Motion variants for animations
 const cardVariants = {
-    hidden: { opacity: 0, y: 30 },
-    visible: { opacity: 1, y: 0 },
+  hidden: { opacity: 0, y: 24 },
+  visible: { opacity: 1, y: 0 },
 };
 
-const iconVariants = {
-    hover: { scale: 1.2, rotate: 5 },
-};
+const TimelineEvent = ({ event, index }) => {
+  const { ref, inView } = useInView({
+    triggerOnce: true,
+    threshold: 0.15,
+  });
 
-const dotVariants = {
-    hover: { scale: 1.5, backgroundColor: '#4A90E2', transition: { duration: 0.3 } },
-};
+  return (
+    <motion.article
+      ref={ref}
+      initial="hidden"
+      animate={inView ? "visible" : "hidden"}
+      variants={cardVariants}
+      transition={{ duration: 0.45, delay: index * 0.06 }}
+      className="relative pl-14 md:pl-16"
+    >
+      <div className="absolute left-[11px] md:left-[13px] top-6 z-10" aria-hidden="true">
+        <span className="relative flex h-4 w-4 md:h-5 md:w-5">
+          <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-blue-400 opacity-40" />
+          <span className="relative inline-flex h-4 w-4 md:h-5 md:w-5 rounded-full bg-gradient-to-br from-blue-400 to-teal-400 shadow-[0_0_12px_rgba(56,189,248,0.8)] ring-2 ring-slate-950" />
+        </span>
+      </div>
 
-const TimelineEvent = ({ event, index, isExpanded, toggleExpand }) => {
-    const isLeft = index % 2 === 0; // Determine if the event should be on the left or right
-
-    const { ref, inView } = useInView({
-        triggerOnce: true,
-        threshold: 0.2,
-    });
-
-    return (
-        <motion.div
-            ref={ref}
-            initial="hidden"
-            animate={inView ? 'visible' : 'hidden'}
-            variants={cardVariants}
-            transition={{ duration: 0.5 }}
-            className={`relative flex mb-16 md:mb-24 transition-all duration-300`}
-            style={{
-                width: '50%',
-                marginLeft: isLeft ? '0' : '50%',
-                marginRight: isLeft ? '50%' : '0',
-                paddingLeft: isLeft ? '40px' : '0',
-                paddingRight: isLeft ? '0' : '40px',
-                textAlign: isLeft ? 'left' : 'right',
-            }}
-        >
-            {/* Vertical Line */}
-            <div className={`absolute top-0 left-1/2 transform -translate-x-1/2 bg-gray-300 h-full w-2 z-0`}>
-                {/* Interactive Dot */}
-                <motion.div
-                    className="absolute w-4 h-4 rounded-full bg-gray-700 cursor-pointer"
-                    style={{ top: '50%', left: '50%', transform: 'translate(-50%, -50%)' }}
-                    whileHover="hover"
-                    whileTap={{ scale: 1.7 }}
-                    variants={dotVariants}
-                    onClick={() => toggleExpand(index)} // Toggling event details on dot click
-                ></motion.div>
-            </div>
-
-            {/* Event Circle with Tooltip */}
-            <motion.div
-                className={`bg-gradient-to-br ${isLeft ? "from-blue-500 to-purple-500" : "from-green-500 to-blue-500"} text-white rounded-full w-14 h-14 flex items-center justify-center shadow-lg z-10 relative group`}
-                whileHover="hover"
-                variants={iconVariants}
-                transition={{ duration: 0.3 }}
-            >
-                {event.icon}
-                <div className="absolute -top-10 left-1/2 transform -translate-x-1/2 bg-gray-800 text-white text-xs rounded-md px-2 py-1 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
-                    {event.tooltip}
-                </div>
-            </motion.div>
-
-            {/* Event Details */}
-            <motion.div
-                className={`bg-white rounded-lg shadow-lg p-6 ${isLeft ? 'ml-6' : 'mr-6'} z-10`}
-                whileHover={{ scale: 1.02 }}
-                transition={{ duration: 0.3 }}
-            >
-                <p className="text-sm text-gray-500 font-medium">{event.date}</p>
-                <h3 className="text-xl font-bold text-gray-800 mb-2">{event.title}</h3>
-                
-                {/* Show/Hide Description with Animation */}
-                <motion.div
-                    className={`text-gray-600 mb-4 leading-relaxed ${isExpanded ? 'block' : 'hidden'}`}
-                    initial={{ opacity: 0, height: 0 }}
-                    animate={isExpanded ? { opacity: 1, height: 'auto' } : { opacity: 0, height: 0 }}
-                    transition={{ duration: 0.5 }}
-                >
-                    {event.description}
-                </motion.div>
-
-                {isExpanded && event.focus && (
-                    <p className="text-gray-500">Focus: {event.focus}</p>
-                )}
-
-                {/* Read More / Show Less Button */}
-                <button
-                    onClick={toggleExpand}
-                    className="text-blue-500 font-semibold hover:text-blue-700 transition-colors duration-200 mt-4"
-                    aria-label={`Toggle details for ${event.title}`}
-                >
-                    {isExpanded ? 'Show Less' : 'Read More'}
-                </button>
-            </motion.div>
-        </motion.div>
-    );
+      <div className="glass-card glass-card-hover p-4 md:p-6 text-left">
+        <span className="date-badge mb-3">{event.date}</span>
+        <h3 className="mt-3 text-lg md:text-xl font-bold tracking-tight text-white leading-snug">
+          {event.role}
+        </h3>
+        <p className="text-sm md:text-base font-semibold text-teal-300 mt-1 mb-3">
+          {event.company}
+        </p>
+        <p className="text-sm md:text-base text-slate-400 leading-relaxed">
+          {event.description}
+        </p>
+      </div>
+    </motion.article>
+  );
 };
 
 const TimelineSection = () => {
-    const [expandedIndex, setExpandedIndex] = useState(null);
+  const timelineEvents = [
+    {
+      date: "Jul 2025 - Dec 2025",
+      role: "Project Manager",
+      company: "PT. KANALIA KUNCI KOMUNIKASI KREATIF (FourKleis 360)",
+      description:
+        "Managed end-to-end project delivery for brand activation campaigns, including FMCG clients under the Wong Coco Group. Coordinated event logistics, managed vendor relations, and drove cross-functional alignment between creative teams and stakeholders to ensure on-time execution and strategic alignment.",
+    },
+    {
+      date: "Nov 2024 - Jul 2025",
+      role: "Software Engineer & Implementer",
+      company: "PT Timur Usaha Mandiri / Makmur Supra Nusantara",
+      description:
+        "Spearheaded full-stack web development and system optimization for corporate and educational sectors. Focused on process automation, improving digital workflows, and deploying scalable web solutions using PHP, Laravel, and Vue.js.",
+    },
+    {
+      date: "Oct 2019 - May 2024",
+      role: "Assistant Head of Branch Operations",
+      company: "PT. Sriwijaya Artha Boga",
+      description:
+        "Directed comprehensive branch operations, driving business strategy, market expansion, and revenue growth. Managed supply chain logistics, cross-functional team leadership, and financial forecasting driven by evidence-based data analysis over a 4.5-year tenure.",
+    },
+    {
+      date: "Jan 2024 - Jun 2024",
+      role: "Technical Teaching Assistant",
+      company: "Universitas Multimedia Nusantara",
+      description:
+        "Mentored students in internet technologies and web architecture. Guided the development of front-end applications, focusing on clean code practices and technical project coordination.",
+    },
+    {
+      date: "Aug 2023 - Dec 2023",
+      role: "Technical Operations Intern",
+      company: "Universitas Multimedia Nusantara",
+      description:
+        "Collaborated on the infrastructure and deployment of an e-commerce platform. Designed relational databases and integrated algorithmic recommendation systems to support core business logic.",
+    },
+  ];
 
-    const timelineEvents = [
-        {
-            date: "Nov 2024 - Present",
-            title: "Software Engineer & Technical Implementer | PT Timur Usaha Mandiri / PT Makmur Supra Nusantara",
-            description: "Focused on business-driven technical solutions. Implemented and configured CRM systems, streamlined client data management workflows, and integrated APIs to improve internal business operations.",
-            focus: "CRM configuration, client data workflows, API integration",
-            icon: <FaLaptopCode className="text-white w-7 h-7" />,
-            tooltip: "PT Timur Usaha Mandiri / PT Makmur Supra Nusantara"
-        },
-        {
-            date: "Recent",
-            title: "Financial & Client Advisory | Independent",
-            description: "Conducted comprehensive portfolio audits and managed complex client relationships. Developed strategic risk management plans, ensuring long-term financial stability for high-net-worth clients.",
-            focus: "Portfolio audits, risk management, client advisory",
-            icon: <FaUserTie className="text-white w-7 h-7" />,
-            tooltip: "Independent Advisory"
-        },
-        {
-            date: "Oct 2019 – Mar 2024",
-            title: "Assistant Head of Branch | PT Sriwijaya Artha Boga",
-            description: "Led core business operations and strategic planning. Successfully boosted branch revenue by 10% and managed daily logistics, maintaining a 98% inventory accuracy rate over a 4+ year tenure.",
-            focus: "Operations, logistics, inventory accuracy, revenue growth",
-            icon: <FaBriefcase className="text-white w-7 h-7" />,
-            tooltip: "Business Operations"
-        },
-        {
-            date: "Jan 2024 – Jun 2024",
-            title: "Technical Project Lead & Teaching Assistant | Universitas Multimedia Nusantara",
-            description: "Mentored and led 30+ students through complex technical projects. Acted as a project coordinator, guiding teams in developing 15+ functional applications and improving overall delivery metrics by 20%.",
-            focus: "Mentorship, project coordination, delivery metrics",
-            icon: <FaGraduationCap className="text-white w-7 h-7" />,
-            tooltip: "Project Leadership"
-        },
-        {
-            date: "Aug 2023 – Jan 2024",
-            title: "Technical Operations Intern | Universitas Multimedia Nusantara",
-            description: "Assisted in the deployment of digital commerce platforms, integrating recommendation systems and managing database frameworks to support business logic.",
-            focus: "Digital commerce deployment, databases, recommendation systems",
-            icon: <FaCode className="text-white w-7 h-7" />,
-            tooltip: "Technical Operations"
-        }
-    ];
-
-    const toggleExpand = (index) => {
-        setExpandedIndex(expandedIndex === index ? null : index);
-    };
-
-    return (
-        <section className="py-20 bg-gradient-to-b from-gray-50 to-gray-100  rounded-lg" id="journey">
-            <div className="container mx-auto px-6 text-center">
-                <h2 className="text-5xl font-bold mb-16 text-gray-800">My Journey</h2>
-                <div className="relative">
-                    <div className="relative">
-                        {timelineEvents.map((event, index) => (
-                            <TimelineEvent
-                                key={index}
-                                event={event}
-                                index={index}
-                                isExpanded={expandedIndex === index}
-                                toggleExpand={() => toggleExpand(index)} // Pass function to toggle expand
-                            />
-                        ))}
-                    </div>
-                </div>
-            </div>
-        </section>
-    );
+  return (
+    <section className="py-12 md:py-20" id="journey">
+      <div className="mx-auto w-full max-w-4xl">
+        <h2 className="section-heading text-center mb-3">My Journey</h2>
+        <p className="section-sub text-center mb-8 md:mb-14 max-w-2xl mx-auto">
+          A roadmap across project management, operations, and technical implementation.
+        </p>
+        <div className="relative">
+          <div
+            className="absolute left-[18px] md:left-[22px] top-6 bottom-6 w-px bg-gradient-to-b from-blue-400 via-teal-400/70 to-transparent"
+            aria-hidden="true"
+          />
+          <div className="flex flex-col gap-4 md:gap-6">
+            {timelineEvents.map((event, index) => (
+              <TimelineEvent
+                key={`${event.role}-${event.date}`}
+                event={event}
+                index={index}
+              />
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
 };
 
 export default TimelineSection;

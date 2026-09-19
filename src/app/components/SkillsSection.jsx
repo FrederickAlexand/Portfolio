@@ -55,34 +55,32 @@ const skillCategories = [
 
 const SkillsSection = () => {
   return (
-    <section id="skills" className="py-24 bg-[#121212] text-white">
-      <div className="max-w-6xl mx-auto px-4">
-        <h2 className="text-4xl font-bold text-center mb-8">Skills</h2>
-        <p className="text-center text-gray-400 mb-12">
+    <section id="skills" className="py-16 md:py-24 text-white">
+      <div className="max-w-6xl mx-auto">
+        <h2 className="section-heading text-center mb-4">Skills</h2>
+        <p className="section-sub text-center mb-10 md:mb-12 max-w-2xl mx-auto">
           Capabilities I use to connect technical systems with business operations.
         </p>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 lg:gap-8">
           {skillCategories.map((category, index) => (
             <motion.div
               key={category.title}
-              className="flex flex-col p-6 bg-[#1E1E1E] rounded-lg shadow-lg"
-              initial={{ opacity: 0, y: 50 }}
+              className="glass-card glass-card-hover flex flex-col p-4 md:p-6"
+              initial={{ opacity: 0, y: 36 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.45, delay: index * 0.1 }}
             >
-              <h3 className="text-xl font-semibold mb-6 text-center text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600">
+              <h3 className="text-lg md:text-xl font-semibold mb-6 text-center tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-teal-300">
                 {category.title}
               </h3>
               <ul className="space-y-4">
                 {category.skills.map((skill) => (
-                  <li
-                    key={skill.name}
-                    className="flex items-start text-left"
-                  >
-                    <span className="text-purple-500 text-lg mt-0.5 mr-3 shrink-0">
+                  <li key={skill.name} className="flex items-start text-left">
+                    <span className="text-teal-400 text-lg mt-0.5 mr-3 shrink-0">
                       {skill.icon}
                     </span>
-                    <span className="text-gray-200">{skill.name}</span>
+                    <span className="text-slate-200 leading-relaxed">{skill.name}</span>
                   </li>
                 ))}
               </ul>
