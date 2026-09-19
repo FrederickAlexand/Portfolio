@@ -89,8 +89,8 @@ const TimelineEvent = ({ event, index, isExpanded, toggleExpand }) => {
                     {event.description}
                 </motion.div>
 
-                {isExpanded && (
-                    <p className="text-gray-500">Technologies: {event.technologies}</p>
+                {isExpanded && event.focus && (
+                    <p className="text-gray-500">Focus: {event.focus}</p>
                 )}
 
                 {/* Read More / Show Less Button */}
@@ -111,53 +111,45 @@ const TimelineSection = () => {
 
     const timelineEvents = [
         {
-            date: "August 2023 – January 2024",
-            title: "Fullstack Web Developer Intern, Universitas Multimedia Nusantara",
-            description: "Designed and developed an e-commerce platform using ReactJs and Laravel, integrating smart contracts and recommendation systems.",
-            technologies: "ReactJs, Laravel, Blockchain, AHP, SAW",
-            icon: <FaCode className="text-white w-7 h-7" />,
-            tooltip: "Web Development Internship"
+            date: "Nov 2024 - Present",
+            title: "Software Engineer & Technical Implementer | PT Timur Usaha Mandiri / PT Makmur Supra Nusantara",
+            description: "Focused on business-driven technical solutions. Implemented and configured CRM systems, streamlined client data management workflows, and integrated APIs to improve internal business operations.",
+            focus: "CRM configuration, client data workflows, API integration",
+            icon: <FaLaptopCode className="text-white w-7 h-7" />,
+            tooltip: "PT Timur Usaha Mandiri / PT Makmur Supra Nusantara"
         },
         {
-            date: "January 2024 – June 2024",
-            title: "Assistant Laboratory, Universitas Multimedia Nusantara",
-            description: "Tutored 30+ students, resulting in a 20% improvement in grades, and guided students in developing 15+ web applications using ReactJs.",
-            technologies: "HTML, CSS, JavaScript, ReactJs",
+            date: "Recent",
+            title: "Financial & Client Advisory | Independent",
+            description: "Conducted comprehensive portfolio audits and managed complex client relationships. Developed strategic risk management plans, ensuring long-term financial stability for high-net-worth clients.",
+            focus: "Portfolio audits, risk management, client advisory",
             icon: <FaUserTie className="text-white w-7 h-7" />,
-            tooltip: "Teaching Assistant"
+            tooltip: "Independent Advisory"
         },
         {
-            date: "October 2019 – March 2024",
-            title: "Assistant Head of Branch, PT Sriwijaya Artha Boga",
-            description: "Led business strategies, boosting revenue by 10%, and managed operations with 98% inventory accuracy.",
-            technologies: "Business Management, Leadership",
+            date: "Oct 2019 – Mar 2024",
+            title: "Assistant Head of Branch | PT Sriwijaya Artha Boga",
+            description: "Led core business operations and strategic planning. Successfully boosted branch revenue by 10% and managed daily logistics, maintaining a 98% inventory accuracy rate over a 4+ year tenure.",
+            focus: "Operations, logistics, inventory accuracy, revenue growth",
             icon: <FaBriefcase className="text-white w-7 h-7" />,
             tooltip: "Business Operations"
         },
         {
-            date: "July 2024",
-            title: "Graduated with a Bachelor's in Informatics Engineering, Universitas Multimedia Nusantara",
-            description: "Completed a thesis on classifying meat freshness using CNN and gained hands-on experience in deep learning and image processing.",
-            technologies: "Python, CNN, Machine Learning",
+            date: "Jan 2024 – Jun 2024",
+            title: "Technical Project Lead & Teaching Assistant | Universitas Multimedia Nusantara",
+            description: "Mentored and led 30+ students through complex technical projects. Acted as a project coordinator, guiding teams in developing 15+ functional applications and improving overall delivery metrics by 20%.",
+            focus: "Mentorship, project coordination, delivery metrics",
             icon: <FaGraduationCap className="text-white w-7 h-7" />,
-            tooltip: "Degree Achieved"
+            tooltip: "Project Leadership"
         },
         {
-            date: "January 2024 - August 2024",
-            title: "Full-Stack Developer at RevoU Bootcamp",
-            description: "Built responsive web applications using Next.js and TypeScript, focusing on both frontend and backend development.",
-            technologies: "Next.js, TypeScript, Flask, SQLAlchemy",
-            icon: <FaLaptopCode className="text-white w-7 h-7" />,
-            tooltip: "Full-Stack Bootcamp"
-        },
-        {
-            date: "November 2024 - Present",
-            title: "Software Engineer at PT Timur Usaha Mandiri (Placed at PT Makmur Supra Nusantara)",
-            description: "Developed full-stack web applications using PHP (MVC), Laravel, Vue.js, and integrated APIs. Focused on both frontend (UI/UX, Vue.js) and backend (Laravel, database management, and API integration). Key projects include school websites and CRM systems for various companies.",
-            technologies: "PHP (MVC), Laravel, Vue.js, MySQL, API Integration",
-            icon: <FaLaptopCode className="text-white w-7 h-7" />,
-            tooltip: "Software Engineer"
-        }        
+            date: "Aug 2023 – Jan 2024",
+            title: "Technical Operations Intern | Universitas Multimedia Nusantara",
+            description: "Assisted in the deployment of digital commerce platforms, integrating recommendation systems and managing database frameworks to support business logic.",
+            focus: "Digital commerce deployment, databases, recommendation systems",
+            icon: <FaCode className="text-white w-7 h-7" />,
+            tooltip: "Technical Operations"
+        }
     ];
 
     const toggleExpand = (index) => {

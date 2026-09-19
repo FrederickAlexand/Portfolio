@@ -2,17 +2,6 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import { FaCode, FaUserGraduate, FaCertificate } from "react-icons/fa";
-import {
-  SiJavascript,
-  SiReact,
-  SiPython,
-  SiNextdotjs,
-  SiHtml5,
-  SiCss3,
-  SiPostgresql,
-  SiMysql,
-  SiPhp,
-} from "react-icons/si";
 import TabButton from "./TabButton";
 import { AnimatePresence, motion } from "framer-motion"; // Animation
 // import certificatePreviewImage from "../path/to/certificate-preview.jpg"; // Example preview image
@@ -22,34 +11,13 @@ const TAB_DATA = [
     title: "Skills",
     id: "skills",
     content: (
-      <ul className="list-disc pl-2">
-        <li className="flex items-center">
-          <SiReact className="mr-2 text-sky-500" /> React
-        </li>
-        <li className="flex items-center">
-          <SiNextdotjs className="mr-2 text-gray-700" /> Next.js
-        </li>
-        <li className="flex items-center">
-          <SiHtml5 className="mr-2 text-orange-600" /> HTML5
-        </li>
-        <li className="flex items-center">
-          <SiCss3 className="mr-2 text-blue-500" /> CSS3
-        </li>
-        <li className="flex items-center">
-          <SiJavascript className="mr-2 text-yellow-500" /> JavaScript
-        </li>
-        <li className="flex items-center">
-          <SiPython className="mr-2 text-green-500" /> Python
-        </li>
-        <li className="flex items-center">
-          <SiPhp className="mr-2 text-violet-700" /> PHP
-        </li>
-        <li className="flex items-center">
-          <SiPostgresql className="mr-2 text-blue-800" /> PostgreSQL
-        </li>
-        <li className="flex items-center">
-          <SiMysql className="mr-2 text-orange-400" /> MySQL
-        </li>
+      <ul className="list-disc pl-2 space-y-2">
+        <li>Process Optimization & Inventory Management</li>
+        <li>CRM & ERP Configuration</li>
+        <li>Database Management (PostgreSQL/MySQL)</li>
+        <li>API Integration & Laravel/PHP</li>
+        <li>Technical Project Coordination</li>
+        <li>Client Solutions & Financial Advisory</li>
       </ul>
     ),
   },
@@ -189,20 +157,19 @@ const AboutSection = () => {
           <p className="text-base lg:text-lg leading-relaxed mb-6">
             I&apos;m a{" "}
             <span className="text-purple-400 font-bold">
-              passionate Full-Stack Developer
+              Technical Operations & Solutions Specialist
             </span>{" "}
-            with a{" "}
+            who connects software implementation with{" "}
             <span className="font-semibold text-purple-400">
-              strong foundation
-            </span>{" "}
-            in web technologies like <strong>React</strong> and{" "}
-            <strong>Next.js</strong>, and a genuine love for creating intuitive
-            user experiences. I recently graduated from{" "}
+              business operations
+            </span>
+            . I focus on streamlining workflows, configuring systems, and
+            driving measurable project outcomes. I graduated from{" "}
             <span className="font-bold text-purple-300">
               Multimedia Nusantara University
             </span>{" "}
-            with a degree in <strong>Informatics Engineering</strong>, ready to
-            dive into my career as a developer.
+            with a degree in <strong>Informatics Engineering</strong>, combining
+            technical delivery with operational leadership.
           </p>
 
           {/* Tabs */}
