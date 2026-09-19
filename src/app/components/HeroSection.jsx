@@ -31,7 +31,7 @@ const HeroSection = () => {
           </p>
           <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center lg:justify-start gap-3">
             <a
-              href="https://wa.me/081369112198?text=Hi%20Fred,%20I%20would%20like%20to%20discuss%20a%20project"
+              href="https://wa.me/08118683717?text=Hi%20Fred,%20I%20would%20like%20to%20discuss%20a%20project"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex min-h-12 items-center justify-center px-6 py-3 rounded-full bg-gradient-to-r from-blue-500 to-teal-400 text-white font-semibold shadow-lg shadow-blue-500/30 hover:brightness-110 transition-all duration-300"
